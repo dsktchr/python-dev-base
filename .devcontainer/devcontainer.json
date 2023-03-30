@@ -1,0 +1,33 @@
+{
+  "name": "fullstack-backend-for-python",
+  "dockerComposeFile": "../docker-compose.development.yml",
+  "workspaceFolder": "/code",
+  "service": "api",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python3.10",
+        "python.sortImports.path": "/usr/local/bin/isort",
+        "python.linting.enabled": true,
+        "python.linting.flake8Enabled": true,
+        "python.linting.flake8Path": "/usr/local/bin/flake8",
+        "python.linting.mypyEnabled": true,
+        "python.linting.mypyPath": "/usr/local/bin/mypy",
+        "python.formatting.provider": "black",
+        "python.formatting.blackPath": "/usr/local/bin/black",
+        "[python]": {
+          "editor.defaultFormatter": null,
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+          }
+        },
+        "python.analysis.extraPaths": [
+          "/usr/local/lib/python3.10/site-packages"
+        ]
+      },
+      "extensions": ["ms-python.python"]
+    }
+  }
+}

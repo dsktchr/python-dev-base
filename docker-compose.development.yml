@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: .
+      target: development
+    volumes:
+      - .:/code:cached
+    tty: true
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=example
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pass
+volumes:
+  mysql-data:
